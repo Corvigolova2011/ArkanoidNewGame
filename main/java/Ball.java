@@ -26,9 +26,13 @@ public class Ball {     //3-67 это класс,где есть размеры,
     public static boolean bigBallMode = false;
     public static int bigBallModeColor= 0;
     public static boolean firBallMode = false;
-    
-    public Ball() {
+
+    private Arakanoid game;
+
+    public Ball(Arakanoid game) {
+        this.game = game;
     }
+
     void move() {
     }
     
@@ -44,7 +48,7 @@ public class Ball {     //3-67 это класс,где есть размеры,
         return true;
     }
     
-    public void paint(Graphics2D graphics) {    //47-63 тут мы создаем цвета.
+    public void paintBar(Graphics2D graphics) {    //47-63 тут мы создаем цвета.
         graphics.setColor(Color.BLUE);
         if(bigBallMode) {
             if(bigBallModeColor == 0) {
@@ -61,9 +65,8 @@ public class Ball {     //3-67 это класс,где есть размеры,
             }
             graphics.fillOval(x, y ,DIAMETER,DIAMETER);
         } else if (firBallMode) {}
-
     }
-    
+    public Rectangle getBounds() {return new Rectangle(x ,y, DIAMETER,DIAMETER);}
 }
 /**
  * the Ball is the class where the variants of the balls are recorded
