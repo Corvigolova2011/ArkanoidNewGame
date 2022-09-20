@@ -3,8 +3,8 @@ import javax.swing.*;
 
 public class Arakanoid {
 
-    public static final int WIDTH = 410;
-    public static final int HEIGHT = 450;
+    public static final int WIDTH = 410; //ширина
+    public static final int HEIGHT = 450; //высота
 
 
 
@@ -15,6 +15,5 @@ public class Arakanoid {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
         frame.setVisible(true);
-
     }
 }
