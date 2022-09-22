@@ -4,11 +4,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
+import java.awt.geom.Rectangle2D;
 
 public class DrawFigures {
     private static final int WINDOW_WIDTH = 500;
     private static final int WINDOW_HEIGHT = 400;
-
     public static void main(String[] args) {
         JFrame newWindow = buildWindow();
         newWindow.add(new MyComponent());
@@ -16,8 +16,6 @@ public class DrawFigures {
     }
 
     private static class MyComponent extends JComponent {
-        
-
         @Override
         public void paint(Graphics g) {
             Font font = new Font("Ariel", Font.BOLD, 25);
@@ -35,30 +33,43 @@ public class DrawFigures {
             g2.draw(newLine2);
             g2.draw(newLine3);
             g2.draw(newLine4);
-            g2.setColor(Color.RED);
             g2.draw(newLine5);
             g2.setColor(Color.BLACK);
 
             Ellipse2D ellipse2D = new Ellipse2D.Double(100, 100, 150, 70);
             g2.draw(ellipse2D);
-            
-            Ellipse2D ellipse2D1 = new Ellipse2D.Double(200, 200, 150, 150);
-            g2.draw(ellipse2D1);
-            g2.fill(ellipse2D1);
+
+            Ellipse2D circle = new Ellipse2D.Double(200, 200, 150, 150);
+            g2.draw(circle);
+            g2.setColor(Color.getHSBColor(100, 150, 230));
+            g2.fill(circle);
+
+            Rectangle2D rectangle2D = new Rectangle2D.Double(100, 100, 300, 300);
+            g2.setColor(Color.BLACK);
+            g2.draw(rectangle2D);
+
 
             double x1, x2, y1, y2;
             Line2D newLine;
+
+
+//            for (int i = 0; i < 100; i++) {
+////                x1 = F(i);
+////                x2 = F(x1);
+////                y1 = F(i);
+////                y2 = F(y1);
+//                g2.draw(new Line2D.Double(x1, y1, x2, y2));
+//            }
         }
     }
 
-    private static JFrame buildWindow(){
-        JFrame jFrame = new JFrame();
-        jFrame.setTitle("Рисуем фигуры в окне");
+    private static JFrame buildWindow() {
+        JFrame jFrame = new JFrame("Рисуем фигуры в окне");
         jFrame.setVisible(true);
         Toolkit toolkit = Toolkit.getDefaultToolkit();
-        Dimension dimension = toolkit.getScreenSize();
-        jFrame.setBounds(dimension.width / 2 - WINDOW_WIDTH / 2,
-                dimension.height / 2 - WINDOW_HEIGHT / 2,
+        Dimension ourScreenDimension = toolkit.getScreenSize();
+        jFrame.setBounds(ourScreenDimension.width / 2 - WINDOW_WIDTH / 2,
+                ourScreenDimension.height / 2 - WINDOW_HEIGHT / 2,
                 WINDOW_WIDTH, WINDOW_HEIGHT);
         jFrame.setResizable(false);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -67,7 +78,7 @@ public class DrawFigures {
 
     private static void getSystemFonts() {
         String[] arrayOfFonts = GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
-        for (String element: arrayOfFonts) {
+        for (String element : arrayOfFonts) {
             System.out.println(element);
         }
     }
