@@ -8,9 +8,9 @@ public class bricks {
 
     public List<Brick> bricks = new ArrayList<>();
 
-    private Arakanoid game;
+    private Arkanoid game;
 
-    public bricks(Arakanoid game) {
+    public bricks(Arkanoid game) {
         this.game = game;
     }
 

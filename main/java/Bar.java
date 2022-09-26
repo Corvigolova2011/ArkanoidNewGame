@@ -15,21 +15,21 @@ public class Bar {
     public int default_x;
     public int move_speed = 10;
 
-    private Arakanoid game;
+    private Arkanoid game;
 
 
-    public Bar(Arakanoid game) {
+    public Bar(Arkanoid game) {
         this.game = game;
     }
 
-    Bar bar = new Bar(new Arakanoid());
+    Bar bar = new Bar(new Arkanoid());
 
     void move(int direction){
 
 
     }
 
-    public static void looseLive(Arakanoid game) {
+    public static void looseLive(Arkanoid game) {
 
     }
 
@@ -56,5 +56,5 @@ public class Bar {
 }
 /**
  * Bar is a class where the type of hurl used in the game
- * Arakanoid is created
+ * Arkanoid is created
  */

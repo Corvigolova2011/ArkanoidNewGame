@@ -27,9 +27,9 @@ public class Ball {     //3-67 это класс,где есть размеры,
     public static int bigBallModeColor= 0;
     public static boolean firBallMode = false;
 
-    private Arakanoid game;
+    private Arkanoid game;
 
-    public Ball(Arakanoid game) {
+    public Ball(Arkanoid game) {
         this.game = game;
     }
 
